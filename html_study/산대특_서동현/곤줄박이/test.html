@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&display=swap" rel="stylesheet">
+
+
+    <style>
+        body{margin:0;}
+        .layout {
+            max-width: 800px;
+            border: 2px solid black;
+            margin: auto;
+            display:flex;
+            flex-direction:column;
+        }
+
+        #layout02 {
+            background: skyblue;
+            display: flex;
+        }
+
+        header {
+            text-align: center;
+            background: beige;
+        }
+
+        section {
+            background: maroon;
+            padding: 20px;
+        }
+
+        section:hover {
+            transform: rotate(40deg);
+        }
+
+        article {
+            background: aquamarine;
+            padding: 20px;
+        }
+
+        article:hover {
+            transform: rotate(40deg);
+        }
+
+        aside {
+            background: palegreen;
+            flex: 1;
+            padding: 20px;
+            transition: background 0.8s;
+        }
+        aside:hover{
+            background:linear-gradient(tomato,gold);}
+        main {
+            flex: 2.5;
+        }
+
+        header {
+            transition: 0.5s;
+        }
+
+        header:hover {
+            background: red;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-position: inside;
+            margin-left: 0;
+            max-width: 700px;
+            margin: auto;
+            margin: 0px 0px 30px;
+            list-style: none;
+        }
+
+        nav li {
+            flex: 1;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        nav li:hover {
+            transform: scale(1.5);
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .gugi-regular {
+            font-family: "Gugi", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        @media(max-width:600px) {
+            #layout02 {
+                flex-direction: column;
+            }
+
+            nav li:nth-child(4),
+            nav li:nth-child(5) {
+                display: none;
+            }
+
+            /* main{flex-grow:3;}
+        aside{flex-grow:1;} */
+        }
+
+
+
+        /* h1 {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        } */
+
+        main section p {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        main article p {
+            font-family: "Gugi", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        footer {
+            background:linear-gradient(orange,gold);
+        }
+        footer:hover{
+            background:linear-gradient(yellow,orange);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <header>
+            <h1>해더</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+            </ul>
+        </nav>
+        <div id="layout02">
+            <main>
+                <section>
+                    <h1>색션</h1>
+                    <p>가나다라마바</p>
+                    <p>가나다라마바</p>
+
+                </section>
+                <article>
+                    <h1>아티클</h1>
+                    <p>가나다라마바</p>
+                    <p>가나다라마바</p>
+                </article>
+            </main>
+            <aside>
+                <h1>어사이드</h1>
+            </aside>
+        </div>
+        <footer>
+            <h2>푸터</h2>
+        </footer>
+    </div>
+
+</body>
+
+</html>

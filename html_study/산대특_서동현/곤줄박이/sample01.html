@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>라인컴퓨터</title>
+    <style>
+        header {border:3px solid gray;}
+        nav    {background: pink; padding:20px;}
+        nav + div {border:3px double blue; display:flex;}
+        div > div{border:5px solid;flex:2.5}
+        aside {background:#ddd; flex:1;}
+/* div 부모가 display를 flex로 선언하고 그 자식들이 
+첫번쨰 div가 2.5 aside가 1로 비율을 나눠가진다. 
+2.5대 1 
+*
+        /* div aside {border:10px solid;} */
+        
+    </style>
+</head>
+<body>
+    <header><h1>상단구역</h1></header>
+    <nav>메뉴부분</nav>
+    <div>   
+        <div>
+            <section><h2>정보구역 -1</h2></section>
+            <article><h2>정보구역 -2</h2></article>
+        </div>
+        <aside>부가정보</aside>
+    </div>
+    <footer>하단정보</footer>
+</body>
+</html>

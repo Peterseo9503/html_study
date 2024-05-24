@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셈플3</title>
+    <style>
+        /* 최대너비설정 
+        900이상넘으면 더이상 크기가 늘어나지 않도록 설정 */
+
+        /*margin auto를 설정하기 전에 max-width값이 설정되어있어야 함 */
+        /*한방향만 지정하고 싶으면 margin:auto; 설정다음에 margin:top:40px;
+        해주면 좌우아래 는 오토설정되고 상단부분만 다시 설정됨, 그래도 코드를 줄이고싶다?
+        margin:40px auto 0;
+        */
+        body {max-width:900px; margin:auto; border:3px dashed}
+        header {border:3px solid gray;}
+        nav    {background: pink; padding:20px;}
+        nav + div {border:3px double blue; display:flex;}
+        div > div{border:5px solid;flex:2.5;}
+        aside {background:#ddd; flex:1;}
+/* div 부모가 display를 flex로 선언하고 그 자식들이 
+첫번쨰 div가 2.5 aside가 1로 비율을 나눠가진다. 
+2.5대 1 
+*/
+
+        /* div aside {border:10px solid;} */
+
+        /* 반응형 너비가 600이하로 작아지면 이벤트 발생*/
+        @media(max-width:600px){
+            nav + div{flex-direction: column;}
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <header><h1>상단구역</h1></header>
+    <nav>메뉴부분</nav>
+    <div>   
+        <div>
+            <section><h2>정보구역 -1</h2></section>
+            <article><h2>정보구역 -2</h2></article>
+        </div>
+        <aside>부가정보</aside>
+    </div>
+    <footer>하단정보</footer>
+</body>
+</html>

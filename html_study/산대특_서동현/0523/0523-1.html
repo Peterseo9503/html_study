@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미션복습하기</title>
+    <style>
+        body {margin: 0;}
+        #layout1 { max-width: 900px; margin: auto; }/*border(선): 3px(두께) solid(실선) red(색); */
+        header {background: linear-gradient(greenyellow,gold); padding: 20px; text-align: center;}
+        nav{height:300px;background:radial-gradient(circle,RGB(255, 182, 193) 10%,rgb(250, 241, 241) 60%,rgb(250, 231, 241) 30%);margin: 20px auto;
+            border-radius:20px;}
+        nav:hover{background:radial-gradient(green 10%,yellow 60%,black 30%);
+                  transform:rotate(20deg);
+        }
+        header h1 { margin: 0;}/* h 여백생김*/
+        #layout2 { display: flex;}
+        #layout2 p {margin: 0;}
+        #layout2 p::first-letter {font-size: 2rem; border: 2px solid red; background: rgba(0,0,255,.5);}    /* p::first-letter 
+        2em기준부모크기의두배 2rem body기준 폰트크기의2배 / 선택자::가상(가짜)선택자 : 하나만찍을떄(태그전체에 효과적용) 
+        :: 두번찍을때(태그일부분 효과적용/지정변경) 콜론두개찍는 가상선택자는 호버가 안된다 ::before 라는 가상선택자는 콜론을 두개찍고 해당 요소의일부분(앞부분에) 텍스트가 입력 ::af*/
+        main {background-color: skyblue; padding: 20px; flex: 2;}
+        main h2 {margin: 0;}
+        /* main p:hover {background: red;} */
+        aside {background-color: rgb(201, 172, 120); padding: 20px; flex: 1;}
+        aside h3 {margin: 0;} 
+        footer {background-color: cornflowerblue;  padding: 20px;}
+        footer h3 {margin: 0; }
+              
+        /* 반응형 부분  작은기계장치 0~550 px */
+        @media (max-width:550px){
+        #layout2 { flex-direction: column; } /* flex-direction: column; */
+        } 
+        p::first-letter {border-radius:10px; padding:0 10px 0 10px;}
+        #layout2 p:hover::first-letter{background:red;}
+        footer{text-align:center;}
+    </style>
+
+</head>
+<body>
+    <div id="layout1">
+        <header>
+            <h1>상단</h1>
+        </header>
+        <nav></nav>
+    <div id="layout2">
+            <main>
+              <h2>메인영역</h2>
+                <p>대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
+                <p>국회는 의원의 자격을 심사하며, 의원을 징계할 수 있다. 대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 국무총리 또는 행정각부의 장은 소관사무에 관하여 법률이나 대통령령의 위임 또는 직권으로 총리령 또는 부령을 발할 수 있다.</p>
+                <p>근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다. 국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다.</p>
+            </main>
+            
+            <aside>
+                <h3>부가영역</h3>
+                    <p>대통령은 국회에 출석하여 발언하거나 서한으로 의견을 표시할 수 있다. 근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다. 국회의원과 정부는 법률안을 제출할 수 있다.</p>
+                    <p>대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+            </aside>
+        </div>
+        <footer><h3>하단정보</h3></footer>
+    </div><!--div 어떠한 구역을 묶어놓는 목적-->
+</body>
+</html>

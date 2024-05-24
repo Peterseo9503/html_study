@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #343a40;
+        }
+
+        hr {
+            border-color: #dee2e6;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-width: 3px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        #item {
+            border-radius: 5px;
+        }
+
+        #newBtn {
+            border-radius: 5px;
+        }
+
+        #todolist {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-group-item {
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container shadow mx-auto mt-5 p-5 w-70">
+        <h2>My To-Do App</h2>
+        <hr>
+        <div class="input-group">
+            <input id="item" class="form-control" type="text" placeholder="Input new todo">
+            <button id="newBtn" type="button" class="btn btn-info" 
+            onclick="addItem()">New Entry</button>
+        </div>
+        <hr>
+        <ul id="todolist" class="list-group"></ul>
+    </div>
+    <script>
+        function addItem() {
+            let list = document.getElementById('todolist');
+            let todo = document.getElementById('item');
+            let listitem = document.createElement('li');
+            let xbtn = document.createElement('button');
+
+            listitem.className='list-group-item list-group-item-action list-group-item-warning';
+            xbtn.className='close';
+            xbtn.innerHTML='&times';
+            //close 버튼에 이벤트 처리
+            xbtn.onclick = function(e){
+                let pnode = e.target.parentNode;
+                list.removeChild(pnode);
+            }
+            listitem.innerText = todo.value;
+            listitem.appendChild(xbtn);
+            
+            list.appendChild(listitem);
+
+            todo.value='';
+            todo.focus();
+        }
+    </script>
+</body>
+
+</html>

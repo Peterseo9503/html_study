@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+
+    <style>
+        * {padding:0; margin:0; }
+        #layout{margin:auto;}
+        header{background:red; height:50pt;}
+        #layout2{border:3px solid black;}
+        main{border:3px solid black;}
+        section{background:blue; height:200pt;}
+        article{background:green; height:100pt;}
+        aside{background:orange; height:50pt;}
+        footer{background:magenta; height:30pt;}
+        
+        /* @media all and(min-width:600pt){
+            #layout2{display:flex; height:300px;}
+            main{flex-grow:3;}
+            aside{flex-grow:1; height:100%;}
+        } */
+
+        
+        @media all and (max-width:600pt) {
+                #layout02 {
+                    display: flex;
+                    height: 300pt
+                }
+
+                main {
+                    flex-grow: 3;
+                }
+
+                aside {
+                    flex-grow: 1;
+                    height: 100%;
+                }
+            }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <header><h1>해더</h1></header>
+        <div id="layout02">
+            <main>
+                <section><h2>섹션</h2></section>
+                <article><h2>아티클</h2></article>
+            </main>
+            <aside><h2>어사이드</h2></aside>
+        </div>
+        <footer>푸터</footer>
+    </div>
+</body>
+
+</html>

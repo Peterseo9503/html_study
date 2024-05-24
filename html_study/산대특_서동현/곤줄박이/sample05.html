@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라인컴퓨터아트학원</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+    <style>
+        #layout {
+            max-width: 700px;
+            border: 1px solid blue;
+            margin: auto;
+        }
+
+        /* [ href*=naver] {
+            width: 300px;
+            display: block;
+            margin: auto;
+        } */
+
+        /* a태그에 있는 herf값에 naver를 포함하는 a태그를 가지고옴
+        a태그는 인라인레벨이기때문에 display를 block으로 해주고 너비를 지정한다. */
+        [ href*=naver] img {
+            width: 300px;
+            margin:auto;
+            /* width: 100%; */
+            display: block;
+            border: 2px solid black;
+        }
+
+
+
+        nav {
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.5s;
+            font-family: "Black Han Sans", sans-serif;
+        }
+
+        nav a:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        nav a:hover {
+            transform: scale(2) translateY(-55px);
+        }
+
+        /*translateY면 위로 올라감 X면 왼쪽*/
+
+        main {
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        main img {
+            max-width: 100%;
+        }
+
+
+        .black-han-sans-regular {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        iframe{border-radius:50px; border:5px dashed red;}
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <header>
+            <a href="https://naver.com"><img src="image/logo.png" alt="네이버로고"></a>
+            <nav>
+                <a href="sample01.html">샘플1</a>
+                <a href="sample02.html">샘플2</a>
+                <a href="sample03.html">샘플3</a>
+                <a href="sample04.html">샘플4</a>
+                <a href="sample05.html">샘플5</a>
+            </nav>
+        </header>
+        <main>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.040059234402!2d126.83351974089346!3d37.31787877222023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6f1b4de62e49%3A0x5153c99c56766ccf!2z65287J247Lu07ZOo7YSw7JWE7Yq47ZWZ7JuQ!5e0!3m2!1sko!2skr!4v1716280116909!5m2!1sko!2skr"
+                width="600" height="450" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- <img src="image/map.png" alt="지도"> -->
+
+
+        </main>
+    </div>
+</body>
+
+</html>
