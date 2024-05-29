@@ -5,112 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #layout {
-            /* border:2px solid black; */
-            max-width: 700px;
-            /*값보다 커지지 않는다. */
-            /* height:500px; */
-            min-height: 80vh;
-            background: yellowgreen;
-            margin: auto;
-            /* margin-top: 20vh; */
-            /* margin-top:20%; */
-            transition: 0.5s;
-            display: flex;
-            /* border: 10px solid red; */
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        form {
-            /* border: 2px solid red; */
-            max-width: 270px;
-        }
-
-        [type="submit"] {
-            margin: auto;
-            display: block;
-        }
-
-        #layout:hover {
-            background: orange;
-        }
-
-        #layout1 {
-            /* border: 5px dashed yellow; */
-            flex-basis: 250px;
-        }
-
-        main {
-            /* border: 5px dashed yellow; */
-            flex-basis: 250px;
-        }
-
-        @media(max-width:500px) {
-            #layout {
-                flex-direction: column;
-            }
-
-            #layout>* {
-                width: 100%;
-            }
-
-        }
-
-        footer {
-            border: 10px solid blue;
-            height: 300px;
-            background: gold;
-            padding: 50px;
-            width: 500px;
-            box-sizing: border-box;
-            /* box-sizing을 해주면 내,외부,보더 포함해서 지정한 지정한 크기로 변함. 
-            그니까 크기에 지장을주는 속성들의 값을 더 더해서 지정한 값으로 바꿔준다는말.
-            */
-        }
-    </style>
+    
 </head>
 
 <body>
 
-    <div id="layout">
-        <div id='layout1'>
-            <h2>이름입력</h2>
-            <form action="/action_page.php">
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname" placeholder="홍"><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname" placeholder="길동"><br><br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <main>
-            <h2>이메일 수신 동의</h2>
-            <form action="#">
-                <input type="radio" id="yes" name="e">
-                <lable for="yes">예</lable>
-                <input type="radio" id='no' name="e">
-                <lable for="no">아니요</lable>
-                <input type="submit" value="확인">
-                >
-            </form>
-            <input type="checkbox" name="hobby">등산
-            <input type="checkbox" name="hobby">낚시
-            <input type="checkbox" name="hobby">영화감상<br>
-            <input type="color"><br>
-            <input type="date"><br>
-            <input type="email">
-            <input type="file">
-            <input type="hidden">
-            <input type="image" src="image/button.jpg">
-            <input type="number" min="23" max="35"><br>
-            <input type="range">
-            <input type="tell">
-            <input type="search">
-        </main>
-        <!-- <footer>푸터</footer> -->
-    </div>
+   <a href=./0529-html/메뉴_2.html>20240529 수업 </a><br>
 
 </body>
 
