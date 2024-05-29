@@ -119,6 +119,6 @@ section button {
 }
 
 @media(max-width:550px){
-    #popup{width:100%;}
+    #popup{left:0;width:100%;}
 }
 
