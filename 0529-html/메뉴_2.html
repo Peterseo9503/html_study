@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상단메뉴(메인/하위메뉴)슬라이딩구현, 스크립트 함수 제어</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="layout">
+        <header>
+            <nav>
+                <ul>
+
+                    <li>
+                        <a class="mainMenu" href="#">메뉴1</a>
+                        <nav class="subMenu">
+                            <a href="#">서브메뉴1-1</a>
+                            <a href="#"  onclick="changeBackground()">서브메뉴1-2</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a class="mainMenu" href="#">메뉴2</a>
+                        <nav class="subMenu">
+                            <a href="#" onclick="changeBackground()">서브메뉴1-1</a>
+                            <a href="#">서브메뉴1-2</a>
+                            <a href="https://www.naver.com" target="_blank" >네이버이동</a>
+                            <a href="#" id="blue">서브메뉴1-4</a>
+                            <a href="#">서브메뉴1-5</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a class="mainMenu" href="#">메뉴3</a>
+                        <nav class="subMenu">
+                            <a href="#" class="test">서브메뉴3-1</a>
+                            <a href="#" class="test">서브메뉴3-2</a>
+                            <a href="#" class="test">서브메뉴3-3</a>
+                            <a href="#" class="test">서브메뉴3-4</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a class="mainMenu" href="#">메뉴4</a>
+                        <nav class="subMenu">
+                            <a href="#">서브메뉴1-1</a>
+                            <a href="#">서브메뉴1-2</a>
+                            <a href="#">서브메뉴1-3</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a class="mainMenu" href="#">메뉴5</a>
+                        <nav class="subMenu">
+                            <a href="#">서브메뉴1-1</a>
+                            <a href="#">서브메뉴1-2</a>
+                            <a href="#">서브메뉴1-3</a>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <img src="../../image/summer2.jpg">
+        </main>
+
+        <footer id="foo">
+
+        </footer>
+        <section id="popup" class="popup">
+            <h3>공지사항</h3>
+            <!-- onclick이벤트헨들러는 ()를안쓰고 = 를쓴다.  -->
+            <button type="button" onclick="dat()">닫기</button>
+        </section>
+    </div>
+    <button class="popupbtn">토글기능</button>
+    <script src="app2.js"></script>
+      
+</body>
+    
+</html>
