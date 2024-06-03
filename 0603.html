@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교재 P.88 마크업하기</title>
+    <style>
+        @font-face {
+            font-family: 'CWDangamAsac-Bold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        * {
+            font-size:1.5rem;
+            /* font-family : 'CWDangamAsac-Bold'; */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #layout {
+            
+            max-width: 1000px;
+            margin: auto;
+            border: 5px solid red;
+            overflow: auto;
+        }
+
+        header {
+            background-color: beige;
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+        }
+
+        h1 {
+            padding: 30px;
+            border: 1px solid red;
+            margin: 0 10px;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            background-color: skyblue;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 15px;
+            margin: 0 70px 0 20px;
+        }
+
+        nav>a {
+            border: 1px solid green;
+            width: 70px;
+            text-align: center;
+        }
+
+        main {
+            background-color: blanchedalmond;
+            display: flex;
+            padding: 20px;
+        }
+
+        section {
+            padding: 200px 50px;
+            background-color: burlywood;
+            flex: 2;
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        #right {
+            flex: 1.5;
+        }
+
+        article {
+            background-color: blueviolet;
+            padding: 80px;
+        }
+
+        aside {
+            background-color: chartreuse;
+            padding: 80px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #ddd;
+            padding: 10px;
+            padding-left: 150px;
+        }
+
+        address {
+            background-color: darkseagreen;
+            padding: 10px;
+            max-width: 600px;
+        }
+
+        p {
+            background-color: darkseagreen;
+            margin-top: 10px;
+            padding: 10px;
+            max-width: 600px;
+        }
+
+        section ul{
+            text-align: left; border:2px solid gray; list-style-position: inside;
+        }
+        video{
+                width:100%; height:200px;
+            }
+
+        /* (0~530픽셀 넓이에서 디자인 적용됨) */
+        @media(max-width:530px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin: 10px;
+                width: 97%;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+            section {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            footer {
+                padding-left: 10px;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <header>
+            <h1>반응형 웹</h1>
+            <nav>
+                <a href="#">메뉴1</a>
+                <a href="#">메뉴2</a>
+                <a href="#">메뉴3</a>
+                <a href="#">메뉴4</a>
+                <a href="#">메뉴5</a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>콘텐츠 그룹01</h2>
+                <audio controls>
+                    <source src="../media/radiant.mp3" type="audio/mpeg">
+                </audio>
+                <video autoplay controls >
+                    <source src="../media/movie.mp4" type="video/mp4">
+                </video>
+            </section>
+            <section id="section2">
+                <h2>콘텐츠 그룹02</h2>
+                <audio controls>
+                    <source src="../media/horse.mp3" type="audio/mpeg">
+                </audio>
+                <video autoplay controls >
+                    <source src="../media/sea.mp4" type="video/mp4">
+                </video>
+            </section>
+            <div id="right">
+                <article>
+                    <h2>주요 기사</h2>
+                </article>
+                <aside>
+                    <h3>광고</h3>
+                </aside>
+            </div>
+        </main>
+        <footer>
+            <address>경기도 부천시 오정구 삼정동 032)674-5685 coxpub@naver.com</address>
+            <p>COPYRIGHT ⓒAll rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const $h2 = document.querySelector("main > section:first-child h2");
+        if ($h2) {
+            console.log($h2);
+        } else { console.log("못받아옴"); }
+
+        const element = document.createElement("span");
+        element.setAttribute("id", "increasingNumber");
+        element.setAttribute("data-value", 100);
+
+        //element.innerText(0);
+
+        $h2.after(element);
+
+        const $span = document.querySelector("#increasingNumber");
+
+        let initialNumber = 0;
+        const dataValue = $span.dataset.value;
+
+        console.log(dataValue);
+
+        //setInterval()함수는 지정된 간격만큼 실행된다는것. 
+        const dynamicNumber = setInterval(() => {
+            // console.log(dataValue);
+            initialNumber += 1;
+            if (dataValue < initialNumber) {
+
+                clearInterval(dynamicNumber);
+                $span.innerHTML = dataValue;
+                return;
+            }
+            $span.innerHTML = initialNumber;
+        }, 100);
+
+        const $section2H2 = document.querySelector("main section:last-of-type h2");
+        // const $section2H2 = document.querySelector("#section2 h2");
+        if ($section2H2) {
+            console.log($section2H2);
+        } else { console.log("못받아옴"); }
+
+        const $div = document.createElement("div");
+        $div.innerHTML = "콘텐츠그룹2에 div를 추가했다.";
+
+        $section2H2.before($div);
+
+        $li = document.createElement("ul");
+        $li.innerHTML = "<li> Starwberry </li>";
+
+        $span.after($li);
+
+
+    </script>
+</body>
+
+</html>
